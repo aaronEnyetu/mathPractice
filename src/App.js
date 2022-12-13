@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import Footer from './components/footer';
+import WelcomePage from './pages/welcome/WelcomePage';
+import TriviaPage from './pages/trivia/TriviaPage';
+import FactsPage from './pages/facts/FactsPage';
+import PracticePage from './pages/practice/PracticePage.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+
+          <Route path="/trivia" element={<TriviaPage />} />
+          <Route path="/facts" element={<FactsPage />} />
+          <Route path="/practice" element={<PracticePage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
