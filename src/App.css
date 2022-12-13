@@ -1,38 +1,141 @@
 .App {
-  text-align: center;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background-color: rgb(85, 82, 88);
+  box-shadow: 0 0 25px 0 black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a.navbar-brand {
+  color: rgb(222, 184, 65) !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar li {
+  margin: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar li:hover {
+  background-size: 100% 100%;
+  color: #27262c;
+  animation: spring 300ms ease-out;
+  text-shadow: 0 -1px 0 #ef816c;
+  font-weight: bold;
+}
+
+.navbar li:active {
+  transform: translateY(4px);
+}
+
+@keyframes spring {
+  15% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.2, 1.1);
   }
-  to {
-    transform: rotate(360deg);
+  40% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(0.95, 0.95);
+  }
+  75% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.05, 1);
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1, 1);
+  }
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+p {
+  color: rgb(55, 50, 62);
+}
+
+button:hover {
+  animation: spring 300ms ease-out;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 #3990d8;
+}
+
+.card {
+  background-color: rgb(74, 193, 248);
+  border-width: 10px;
+  border-style: outset;
+  border-color: rgb(109, 106, 117);
+}
+
+#Modal {
+  background-color: rgb(191, 189, 193);
+  border-width: 10px;
+  border-style: outset;
+  border-color: rgb(109, 106, 117);
+  color: 55, 50, 62;
+}
+
+.modal-body,
+.modal-header,
+.modal-footer {
+  background-color: rgb(191, 189, 193);
+}
+
+#calculatorCard {
+  width: 320px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+#practiceCard {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#triviaCard {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#factsCard {
+  max-width: 600px;
+  min-height: 350px;
+  margin: 0 auto;
+}
+
+#factsText {
+  background-color: rgba(86, 212, 243, 0.7);
+  border-radius: 15px;
+}
+
+.factsInput {
+  width: 200px;
+}
+
+.welcomeCards {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.welcomeImg {
+  max-height: 250px;
+  width: auto;
+  padding-bottom: -25px;
+}
+
+@media only screen and (min-width: 1140px) {
+  #triviaCard {
+    margin-left: 18%;
   }
 }
